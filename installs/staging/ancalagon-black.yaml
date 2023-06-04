@@ -1,0 +1,15 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: ancalagon-black
+  namespace: default
+spec:
+  secretName: ancalagon-black-staging-tls
+  issuerRef:
+    name: letsencrypt-staging
+    kind: ClusterIssuer
+  commonName: "*.ancalagon.black"
+  dnsNames:
+    - "ancalagon.black"
+    - "*.ancalagon.black"

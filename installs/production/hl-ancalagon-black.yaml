@@ -1,0 +1,15 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: hl-ancalagon-black
+  namespace: traefik
+spec:
+  secretName: hl-ancalagon-black-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: "*.hl.ancalagon.black"
+  dnsNames:
+    - "hl.ancalagon.black"
+    - "*.hl.ancalagon.black"
